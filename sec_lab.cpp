@@ -46,6 +46,6 @@ int main(void){
 
     int finish = clock();
     cout << (double(finish - start) / CLOCKS_PER_SEC) << "\n";
-    cout << t(0.25);
+    
     return 0;
 }
