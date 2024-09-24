@@ -1,51 +1,51 @@
 #include <iostream>
 #include <time.h>
-#include <math.h>
+// #include <math.h>
 using namespace std;
 
 
-int factorial2(int k){
-    int res = 1;
-    if (k % 2) {
-        for (int i = 1; i <= k; i += 2){
-            res *= i;
-        }
-    }    
-    else {
-        for (int i = 2; i <= k; i += 2){
-            res *= i;
-        }
+long double power(long double num, long deg) {
+    long double result = 1.0;
+
+    for(long i = 0; i < deg; i++) {
+        result *= num;
     }
 
-    return res;
+    return result;
 }
 
 
-double t(double x){
-    double res1 = 0, res2 = 0;
+long long int factorial2(long long int k){
+    if (k <= 1) return 1;
+    else return k*factorial2(k-2);
+}
 
-    for (int k = 0; k <= 10; k++){
-        res1 += pow(x, 2 * k + 1) / factorial2(2 * k + 1);
-        res2 += pow(x, 2 * k) / factorial2(2 * k);
+
+long double t(long double x){
+    long double res1 = 0.0, res2 = 0.0;
+
+    for (long double k = 0.0; k <= 10.0; k += 1.0){
+
+        res1 += (power(x, 2 * k + 1) / factorial2(2 * k + 1));
+        res2 += (power(x, 2 * k) / factorial2(2 * k));
     }
 
     return res1 / res2;
-
 }
 
 
 int main(void){
 
-    double y, answer;
+    long double y, answer;
     cin >> y;
     int start = clock();
+    
+    answer = (7 * t(0.25) + 2 * t(1 + y)) / (6 - t(power(y, 2) - 1));
 
-    answer = (7 * t(0.25) + 2 * t(1 + y)) / (6 - t(y * y - 1));
-
-    cout << (answer) << "\n";
+    cout << "Answer " << (answer) << "\n";
 
     int finish = clock();
-    cout << (double(finish - start) / CLOCKS_PER_SEC) << "\n";
-    
+    cout << "Time: " << (double(finish - start) / CLOCKS_PER_SEC) << "\n" << endl;
+
     return 0;
 }
