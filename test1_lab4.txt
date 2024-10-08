@@ -1,0 +1,6 @@
+First person:
+11 10 9 3
+Second person:
+8 7 6 5 4 2 1 
+Lenght of first group: 4
+Lenght of second group: 7
