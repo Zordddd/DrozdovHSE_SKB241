@@ -72,7 +72,11 @@ void FilesEqual(char name_of_file1[], char name_of_file2[]){
             }
         }
     }
-
+    else {
+        cout << "Wrong name of files\n";
+        return;
+    }
+    
     file1.close();
     file2.close();
 
