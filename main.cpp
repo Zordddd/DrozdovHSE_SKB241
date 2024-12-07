@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Matrix.hpp"
 
+#define FILE "text.txt"
 
 void interface(){
 
@@ -26,7 +27,7 @@ void interface(){
         switch (choice)
         {
         case 1:
-            matrix1.getMatrix("test.txt");
+            matrix1.getMatrix(FILE);
             break;
         
         case 2:
@@ -58,7 +59,7 @@ void interface(){
         switch (choice)
         {
         case 1:
-            matrix2.getMatrix("test.txt");
+            matrix2.getMatrix(FILE);
             break;
         
         case 2:
